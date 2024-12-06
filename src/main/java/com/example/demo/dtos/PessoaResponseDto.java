@@ -1,19 +1,19 @@
-package com.example.demo.entities;
+package com.example.demo.dtos;
 
 import java.util.Date;
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
-@Entity
 @Data
-public class Pessoa {
+public class PessoaResponseDto {
 
-	@Id
 	private UUID id;
 	private String nome;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date dataNascimento;
 	private String email;
 	private String telefone;
